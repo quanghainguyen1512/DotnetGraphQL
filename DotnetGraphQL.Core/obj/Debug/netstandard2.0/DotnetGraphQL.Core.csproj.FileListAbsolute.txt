@@ -1,0 +1,9 @@
+/mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.Core/obj/Debug/netstandard2.0/DotnetGraphQL.Core.csprojAssemblyReference.cache
+/mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.Core/obj/Debug/netstandard2.0/DotnetGraphQL.Core.csproj.CoreCompileInputs.cache
+/mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.Core/obj/Debug/netstandard2.0/DotnetGraphQL.Core.AssemblyInfoInputs.cache
+/mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.Core/obj/Debug/netstandard2.0/DotnetGraphQL.Core.AssemblyInfo.cs
+/mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.Core/bin/Debug/netstandard2.0/DotnetGraphQL.Core.deps.json
+/mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.Core/bin/Debug/netstandard2.0/DotnetGraphQL.Core.dll
+/mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.Core/bin/Debug/netstandard2.0/DotnetGraphQL.Core.pdb
+/mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.Core/obj/Debug/netstandard2.0/DotnetGraphQL.Core.dll
+/mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.Core/obj/Debug/netstandard2.0/DotnetGraphQL.Core.pdb

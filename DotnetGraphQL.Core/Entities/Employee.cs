@@ -1,12 +1,14 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System;
+using DotnetGraphQL.Core.Interfaces;
+
 namespace DotnetGraphQL.Core.Entities
 {
-    public class Employee
+    public class Employee : IEntity<int>
     {
         [Key]
-        public int EmpId { get; set; }
+        public int Id { get; set; }
         [Required]
         [StringLength(50)]
         public string EmpName { get; set; }

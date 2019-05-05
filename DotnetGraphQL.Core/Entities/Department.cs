@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using DotnetGraphQL.Core.Interfaces;
+
 namespace DotnetGraphQL.Core.Entities
 {
-    public class Department
+    public class Department : IEntity<int>
     {
         [Key]
         public int Id { get; set; }

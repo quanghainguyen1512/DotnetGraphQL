@@ -38,7 +38,7 @@ namespace DotnetGraphQL.Data.Migrations
                 name: "Employees",
                 columns: table => new
                 {
-                    EmpId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     EmpName = table.Column<string>(maxLength: 50, nullable: false),
                     Dob = table.Column<DateTime>(nullable: false),
@@ -47,7 +47,7 @@ namespace DotnetGraphQL.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employees", x => x.EmpId);
+                    table.PrimaryKey("PK_Employees", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Employees_Departments_DepartmentId",
                         column: x => x.DepartmentId,
@@ -61,17 +61,18 @@ namespace DotnetGraphQL.Data.Migrations
                 columns: table => new
                 {
                     EmpId = table.Column<int>(nullable: false),
-                    TaskId = table.Column<int>(nullable: false)
+                    TaskId = table.Column<int>(nullable: false),
+                    EmployeeId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Assignments", x => new { x.EmpId, x.TaskId });
                     table.ForeignKey(
-                        name: "FK_Assignments_Employees_EmpId",
-                        column: x => x.EmpId,
+                        name: "FK_Assignments_Employees_EmployeeId",
+                        column: x => x.EmployeeId,
                         principalTable: "Employees",
-                        principalColumn: "EmpId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Assignments_Tasks_TaskId",
                         column: x => x.TaskId,
@@ -79,6 +80,11 @@ namespace DotnetGraphQL.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Assignments_EmployeeId",
+                table: "Assignments",
+                column: "EmployeeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Assignments_TaskId",

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DotnetGraphQL.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20190505113729_InitialCreate")]
+    [Migration("20190505124303_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,7 +27,11 @@ namespace DotnetGraphQL.Data.Migrations
 
                     b.Property<int>("TaskId");
 
+                    b.Property<int?>("EmployeeId");
+
                     b.HasKey("EmpId", "TaskId");
+
+                    b.HasIndex("EmployeeId");
 
                     b.HasIndex("TaskId");
 
@@ -51,7 +55,7 @@ namespace DotnetGraphQL.Data.Migrations
 
             modelBuilder.Entity("DotnetGraphQL.Core.Entities.Employee", b =>
                 {
-                    b.Property<int>("EmpId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -65,7 +69,7 @@ namespace DotnetGraphQL.Data.Migrations
 
                     b.Property<int>("Salary");
 
-                    b.HasKey("EmpId");
+                    b.HasKey("Id");
 
                     b.HasIndex("DepartmentId");
 
@@ -91,8 +95,7 @@ namespace DotnetGraphQL.Data.Migrations
                 {
                     b.HasOne("DotnetGraphQL.Core.Entities.Employee", "Employee")
                         .WithMany("Assignments")
-                        .HasForeignKey("EmpId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("EmployeeId");
 
                     b.HasOne("DotnetGraphQL.Core.Entities.Task", "AssignedTask")
                         .WithMany("Assignments")

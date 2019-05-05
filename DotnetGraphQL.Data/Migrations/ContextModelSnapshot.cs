@@ -25,7 +25,11 @@ namespace DotnetGraphQL.Data.Migrations
 
                     b.Property<int>("TaskId");
 
+                    b.Property<int?>("EmployeeId");
+
                     b.HasKey("EmpId", "TaskId");
+
+                    b.HasIndex("EmployeeId");
 
                     b.HasIndex("TaskId");
 
@@ -49,7 +53,7 @@ namespace DotnetGraphQL.Data.Migrations
 
             modelBuilder.Entity("DotnetGraphQL.Core.Entities.Employee", b =>
                 {
-                    b.Property<int>("EmpId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -63,7 +67,7 @@ namespace DotnetGraphQL.Data.Migrations
 
                     b.Property<int>("Salary");
 
-                    b.HasKey("EmpId");
+                    b.HasKey("Id");
 
                     b.HasIndex("DepartmentId");
 
@@ -89,8 +93,7 @@ namespace DotnetGraphQL.Data.Migrations
                 {
                     b.HasOne("DotnetGraphQL.Core.Entities.Employee", "Employee")
                         .WithMany("Assignments")
-                        .HasForeignKey("EmpId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("EmployeeId");
 
                     b.HasOne("DotnetGraphQL.Core.Entities.Task", "AssignedTask")
                         .WithMany("Assignments")

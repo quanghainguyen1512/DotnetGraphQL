@@ -5,6 +5,6 @@ namespace DotnetGraphQL.Core.Interfaces
 {
     public interface ITaskRepository : IBaseRepository<Task, int>
     {
-        List<System.Threading.Tasks.Task<Employee>> GetAssignedEmployees(int id); 
+        System.Threading.Tasks.Task<ICollection<Employee>> GetAssignedEmployees(int id); 
     }
 }

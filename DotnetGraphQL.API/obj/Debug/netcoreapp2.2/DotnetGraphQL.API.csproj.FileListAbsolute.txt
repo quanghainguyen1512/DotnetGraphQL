@@ -3,8 +3,6 @@
 /mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.API/bin/Debug/netcoreapp2.2/DotnetGraphQL.API.runtimeconfig.dev.json
 /mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.API/bin/Debug/netcoreapp2.2/DotnetGraphQL.API.dll
 /mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.API/bin/Debug/netcoreapp2.2/DotnetGraphQL.API.pdb
-/mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.API/bin/Debug/netcoreapp2.2/DotnetGraphQL.Models.dll
-/mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.API/bin/Debug/netcoreapp2.2/DotnetGraphQL.Models.pdb
 /mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.API/obj/Debug/netcoreapp2.2/DotnetGraphQL.API.csprojAssemblyReference.cache
 /mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.API/obj/Debug/netcoreapp2.2/DotnetGraphQL.API.csproj.CoreCompileInputs.cache
 /mnt/WORK/Projects/Dotnet/DotnetGraphQL/DotnetGraphQL.API/obj/Debug/netcoreapp2.2/DotnetGraphQL.API.RazorAssemblyInfo.cache

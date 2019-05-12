@@ -25,7 +25,6 @@
       "DotnetGraphQL.API/1.0.0": {
         "dependencies": {
           "DotnetGraphQL.Data": "1.0.0",
-          "DotnetGraphQL.Models": "1.0.0",
           "GraphQL": "2.4.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
@@ -303,14 +302,6 @@
         },
         "compile": {
           "DotnetGraphQL.Data.dll": {}
-        }
-      },
-      "DotnetGraphQL.Models/1.0.0": {
-        "runtime": {
-          "DotnetGraphQL.Models.dll": {}
-        },
-        "compile": {
-          "DotnetGraphQL.Models.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3557,11 +3548,6 @@
       "sha512": ""
     },
     "DotnetGraphQL.Data/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DotnetGraphQL.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

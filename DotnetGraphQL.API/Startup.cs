@@ -83,8 +83,8 @@ namespace DotnetGraphQL.API
             }
 
             app.UseHttpsRedirection();
+            app.UseGraphiQl("/graphiql", "/demo");
             app.UseMvc();
-            app.UseGraphiQl();
             db.EnsureSeedData();
         }
     }

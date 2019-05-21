@@ -18,6 +18,17 @@ namespace DotnetGraphQL.API.Schemas
                 arguments: new QueryArguments(new QueryArgument<IntGraphType>{Name = "id"}),
                 resolve: ctx => dep.Get(ctx.GetArgument<int>("id"))
             );
+
+            Field<ListGraphType<TaskType>>(
+                "tasks",
+                resolve: ctx => tas.GetAll()
+            );
+
+            Field<TaskType>(
+                "task",
+                arguments: new QueryArguments(new QueryArgument<IntGraphType>{Name = "id"}),
+                resolve: ctx => tas.Get(ctx.GetArgument<int>("id"))
+            );
         }
     }
 }

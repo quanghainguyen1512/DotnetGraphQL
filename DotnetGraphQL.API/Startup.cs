@@ -22,6 +22,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using GraphQL.Http;
 using DotnetGraphQL.API.Schemas;
+using DotnetGraphQL.API.Inputs;
 // using DotnetGraphQL.API.Models;
 
 namespace DotnetGraphQL.API
@@ -57,12 +58,16 @@ namespace DotnetGraphQL.API
             services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
             services.AddSingleton<ITaskRepository, TaskRepository>();
 
+            services.AddSingleton<GraphQuery>();
+            services.AddSingleton<GraphMutation>();
+
             services.AddTransient<DepartmentType>();
             services.AddTransient<EmployeeType>();
             services.AddTransient<TaskType>();
 
-            services.AddSingleton<GraphQuery>();
-            services.AddSingleton<GraphMutation>();
+            services.AddTransient<DepartmentInputType>();
+            services.AddTransient<EmployeeInputType>();
+            services.AddTransient<TaskInputType>();
 
             var sp =services.BuildServiceProvider();
             services.AddSingleton<ISchema>(new GraphSchema(new FuncDependencyResolver(type => sp.GetService(type))));

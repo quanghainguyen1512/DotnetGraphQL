@@ -12,7 +12,8 @@ namespace DotnetGraphQL.API.ObjectTypes
             Field(x => x.DeptName);
             Field<ListGraphType<EmployeeType>>("employees",
             arguments: new QueryArguments(new QueryArgument<IntGraphType> {Name = "id"}),
-            resolve: ctx => repo.GetEmployees(ctx.Source.Id), description: "Department's employees");
+            resolve: ctx => repo.GetEmployees(ctx.Source.Id), 
+            description: "Department's employees");
         }
     }
 }

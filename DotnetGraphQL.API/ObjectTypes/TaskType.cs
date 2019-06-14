@@ -10,7 +10,10 @@ namespace DotnetGraphQL.API.ObjectTypes
         {
             Field(x => x.Id);
             Field(x => x.TaskName);
-            // Field(x => x.)
+            Field<ListGraphType<EmployeeType>>("assignedEmps",
+            arguments: new QueryArguments(new QueryArgument<IntGraphType> {Name = "id"}),
+            resolve: ctx => repo.GetAssignedEmployees(ctx.Source.Id),
+            description: "Assigned Employees");
         }
     }
 }
